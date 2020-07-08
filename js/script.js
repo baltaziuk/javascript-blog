@@ -23,7 +23,7 @@
 
     /*[DONE] remove class 'active' from all articles */
 
-    const activeArticles = document.querySelectorAll('posts span.active');
+    const activeArticles = document.querySelectorAll('.posts article.active');
 
     for(let activeArticles of activeArticles){
         activeArticle.classList.remove('active');
