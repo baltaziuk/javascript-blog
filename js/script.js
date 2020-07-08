@@ -8,10 +8,22 @@
     console.log(event);
   
     /* remove class 'active' from all article links  */
+
+    const activeLinks = document.querySelectorAll('.titles a.active');
+
+    for(let activeLinks of activeLinks){
+        activeLink.classList.remove('active');
+    }
   
     /* add class 'active' to the clicked link */
   
     /* remove class 'active' from all articles */
+
+    const activeArticles = document.querySelectorAll('posts span.active');
+
+    for(let activeArticles of activeArticles){
+        activeArticle.classList.remove('active');
+    }
   
     /* get 'href' attribute from the clicked link */
   
