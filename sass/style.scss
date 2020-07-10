@@ -4,6 +4,8 @@
 
 $color-light: #fff;
 $color-dark: #444;
+$color-biege: hsla(60, 57%, 91%, 0.884);
+
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -22,6 +24,9 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
+  background-image: url("/images/tree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -50,18 +55,21 @@ body {
 
 .sidebar {
   flex: 1 0 0;
+  background-color: #d3d3d3ec;
 }
 
 .posts {
   flex: 2 0 0;
+  background: $color-biege;
 }
 
 .sidebar, .posts {
-  background: $color-light;
+  
   margin-right: 10px;
   padding: 40px;
   border: 1px solid $color-dark;
-  border-radius: 5px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.562);
 }
 
 /* Logo */
