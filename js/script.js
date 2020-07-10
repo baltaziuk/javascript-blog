@@ -64,20 +64,32 @@
         /* remove contents of titleList */
 
         const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
-
-
+        console.log('Title list is clear');
 
         /* for each article */
+        
+        const articles = document.querySelectorAll(optArticleSelector);
+        for (article of articles);
+        console.log('articles', articles); 
 
         /* get the article id */
+        const articleId = article.getAttribute('id');
+        console.log('Article ID', articleId);
 
         /* find the title element */
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+        console.log('article title', articleTitle);
 
         /* get the title from the title element */
+        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+        console.log('link HTML', linkHTML);
 
         /* create HTML of the link */
 
         /* insert link into titleList */
+        titleList.innerHTML = titleList.innerHTML + linkHTML;
+        console.log('title list', titleList);
+        
 
     }
 
