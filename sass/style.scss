@@ -3,13 +3,15 @@
 /* Variables */
 
 $color-light: #fff;
-$color-dark: #444;
+$color-dark: rgb(0, 0, 0);
 $color-biege: hsla(60, 57%, 91%, 0.884);
 
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
 $font-text: 'Source Sans Pro', sans-serif;
+
+$transition: all 1s;
 
 /* Global */
 
@@ -21,11 +23,11 @@ body {
   background: $color-light;
   font-family: $font-text;
   color: $color-dark;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.7;
   background-image: url("/images/tree.jpg");
-  background-size: cover;
+  // background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -77,10 +79,11 @@ body {
 
 .logo {
   font-family: $font-logo;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color: red;
 }
 
 /* Lists */
@@ -89,9 +92,14 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  
 
   .active {
     font-weight: bold;
+    transition: $transition;
+    font-size: 18px;
+    text-decoration-style: wavy;
   }
 }
 
@@ -112,12 +120,22 @@ body {
 /* Post */
 
 .post {
-
   display: none;
   
   &.active {
+    // color: $color-biege;
+    animation-name: animacja;
+    animation-duration: 3s;
+    // animation-iteration-count: 1;
     display: block;
   }
+  
+}
+
+@keyframes animacja {
+ 0% {color: $color-biege;}
+ 100% {color: $color-dark;}
+ 
 }
 
 .post-author {
