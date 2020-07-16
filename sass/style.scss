@@ -99,7 +99,7 @@ body {
     font-weight: bold;
     transition: $transition;
     font-size: 18px;
-    text-decoration-style: wavy;
+    text-decoration-style: double;
   }
 }
 
@@ -144,7 +144,9 @@ body {
 
 .post-tags {
   display: flex;
-
+  word-spacing: 2px;
+  text-decoration: none;
+  
   p {
     margin: 0 10px 0 0;
   }

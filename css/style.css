@@ -83,8 +83,8 @@ body {
   font-weight: bold;
   transition: all 1s;
   font-size: 18px;
-  -webkit-text-decoration-style: wavy;
-          text-decoration-style: wavy;
+  -webkit-text-decoration-style: double;
+          text-decoration-style: double;
 }
 
 .list-horizontal li {
@@ -123,6 +123,8 @@ body {
 .post-tags {
   display: -ms-flexbox;
   display: flex;
+  word-spacing: 2px;
+  text-decoration: none;
 }
 
 .post-tags p {
