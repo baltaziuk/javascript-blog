@@ -137,8 +137,9 @@ function generateTags(){
 
       /* add generated code to html variable */
       /* dodaj wygenerowany kod do zmiennej html */
+      // wrapperTags.innerHTML = wrapperTags.innerHTML + linkHTML;
 
-      wrapperTags.innerHTML = wrapperTags.innerHTML + linkHTML;
+      html = linkHTML;
       console.log('Wrapper Tags = ', wrapperTags);
 
 
@@ -151,6 +152,7 @@ function generateTags(){
 
     /* insert HTML of all the links into the tags wrapper */
     /* wstaw kod HTML wszystkich linków do opakowania tagów */
+    wrapperTags.innerHTML = wrapperTags.innerHTML + html;
 
 
   /* END LOOP: for every article: */
@@ -227,7 +229,7 @@ function addClickListenersToTags(){
 
     /* add tagClickHandler as event listener for that link */
     /* dodaj tagClickHandler jako detektor zdarzeń dla tego linku */
-    tagClickHandler(tagLink);
+    tagLink.addEventListener('click', tagClickHandler);
 
   }
   /* END LOOP: for each link */
