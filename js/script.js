@@ -304,9 +304,9 @@ function addClickListenersToAuthors() {
     author.addEventListener('click', authorClickHandler);
   }
 }
-
+//
 addClickListenersToAuthors();
 
-
+//
 
 
