@@ -9,7 +9,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post .post-author';
+  optArticleAuthorSelector = '.post .post-author',
+  optTagsListSelector = '.tag-list';
 
 const titleClickHandler = function (event) {
   event.preventDefault();
@@ -103,7 +104,13 @@ function generateTitleLinks(customSelector = '') {
 generateTitleLinks();
 
 
+
+
+
+
 function generateTags() {
+  let allTags = {};
+
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
 
@@ -142,6 +149,12 @@ function generateTags() {
 
       html = linkHTML;
       // console.log('Wrapper Tags = ', wrapperTags);
+      if (!allTags[tag]) {
+        allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
+      }
+
 
 
     }
@@ -164,11 +177,60 @@ function generateTags() {
   for (let link of links) {
     link.addEventListener('click', tagClickHandler);
   }
+  const tagList = document.querySelector('.tags');
+  // tagList.innerHTML = allTags.join(' ');
+  console.log('alltags po lewej', allTags);
+
+  const tagsParams = calculateTagParams(allTags);
+  console.log('tagsParams:', tagsParams);
+
+
+  /* [NEW] create variable for all links HTML code */
+  let allTagsHTML = '';
+
+  /* [NEW] START LOOP: for each tag in allTags: */
+  for (let tag in allTags) {
+    /* [NEW] generate code of a link and add it to allTagsHTML */
+    allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + '(' + allTags[tag] + ')' + '</span></a></li>';
+  }
+  /* [NEW] END LOOP: for each tag in allTags: */
+
+  /*[NEW] add HTML from allTagsHTML to tagList */
+  tagList.innerHTML = allTagsHTML;
+
+
+
+
+
 
 }
 
 
+
 generateTags();
+
+
+function calculateTagParams(tags) {
+  const params = { 'max': 0 , 'min': 999999 };
+  for (let tag of tags) {
+    console.log(tag + ' is used' + tags[tag] + 'times');
+
+    if (tags[tag] > params.max) {
+      params.max = tags[tag];
+    }
+    if (tags[tag] < params.min) {
+      params.min = tags[tag];
+    }
+
+  }
+
+  return params;
+}
+
+
+
+
+
 
 
 function tagClickHandler(event) {
@@ -304,9 +366,9 @@ function addClickListenersToAuthors() {
     author.addEventListener('click', authorClickHandler);
   }
 }
-//
+
 addClickListenersToAuthors();
 
-//
+
 
 
