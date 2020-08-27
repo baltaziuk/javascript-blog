@@ -83,8 +83,8 @@ body {
   font-weight: bold;
   transition: all 1s;
   font-size: 18px;
-  -webkit-text-decoration-style: double;
-          text-decoration-style: double;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
 }
 
 .list-horizontal li {
@@ -129,5 +129,50 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+.tag-size-1 {
+  font-size: 1em;
+  color: lightslategrey;
+}
+
+.tag-size-1.active {
+  color: deeppink;
+}
+
+.tag-size-2 {
+  font-size: 1.1em;
+  color: #313131;
+}
+
+.tag-size-2.active {
+  color: deeppink;
+}
+
+.tag-size-3 {
+  font-size: 1.2em;
+  color: brown;
+}
+
+.tag-size-3.active {
+  color: deeppink;
+}
+
+.tag-size-4 {
+  font-size: 1.3em;
+  color: coral;
+}
+
+.tag-size-4.active {
+  color: deeppink;
+}
+
+.tag-size-5 {
+  color: darkviolet;
+  font-size: 1.4em;
+}
+
+.tag-size-5.active {
+  color: deeppink;
 }
 /*# sourceMappingURL=style.css.map */

@@ -128,7 +128,7 @@ function calculateTagClass(count, params){
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
-  const optCloudClassPrefix = calculateTagClass(classNumber);
+  return optCloudClassPrefix + classNumber;
 
 }
 
@@ -171,7 +171,7 @@ function generateTags() {
       /* dodaj wygenerowany kod do zmiennej html */
       // wrapperTags.innerHTML = wrapperTags.innerHTML + linkHTML;
 
-      html = linkHTML;
+      html += linkHTML;
       // console.log('Wrapper Tags = ', wrapperTags);
       if (!allTags[tag]) {
         allTags[tag] = 1;
@@ -190,17 +190,17 @@ function generateTags() {
 
     /* insert HTML of all the links into the tags wrapper */
     /* wstaw kod HTML wszystkich linków do opakowania tagów */
-    wrapperTags.innerHTML += html;
+    wrapperTags.innerHTML = html;
 
 
     /* END LOOP: for every article: */
   }
-  const links = document.querySelectorAll('.list a');
+  // const links = document.querySelectorAll('.list a');
   // console.log('Tag links', links);
 
-  for (let link of links) {
-    link.addEventListener('click', tagClickHandler);
-  }
+  // for (let link of links) {
+  //link.addEventListener('click', tagClickHandler);
+  //}
   const tagList = document.querySelector('.tags');
   //tagList.innerHTML = allTags.join(' ');
   console.log('alltags po prawej', allTags);

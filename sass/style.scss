@@ -99,7 +99,7 @@ body {
     font-weight: bold;
     transition: $transition;
     font-size: 18px;
-    text-decoration-style: double;
+    text-decoration-style: dotted;
   }
 }
 
@@ -150,4 +150,43 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+.tag-size-1 {
+  &.active {
+    color: deeppink;
+  }
+  font-size: 1em;
+  color: lightslategrey;
+}
+
+.tag-size-2 {
+  &.active {
+    color: deeppink;
+  }
+  font-size: 1.1em;
+  color: rgb(49, 49, 49);
+}
+.tag-size-3 {
+  &.active {
+    color: deeppink;
+  }
+  font-size: 1.2em;
+  color: brown;
+}
+.tag-size-4 {
+  &.active {
+    color: deeppink;
+  }
+  font-size: 1.3em;
+  color: coral;
+}
+.tag-size-5 {
+  &.active {
+    color: deeppink;
+  }
+  color: darkviolet;
+  font-size: 1.4em;
+  
+
 }
